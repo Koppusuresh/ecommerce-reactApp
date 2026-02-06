@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "8ca8",
+      "name": "Suresh koppu",
+      "email": "koppusuresh456@gmail.com",
+      "password": "asdfg"
+    },
+    {
+      "id": "48ae",
+      "name": "keerthy",
+      "email": "keerthy@gmail.com",
+      "password": "hjkl"
+    },
+    {
+      "id": "32be",
+      "name": "vishnu",
+      "email": "vishnu@gmail.com",
+      "password": "qwert"
+    }
+  ]
+}

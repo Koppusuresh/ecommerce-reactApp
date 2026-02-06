@@ -6,12 +6,16 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Banner from './Banner';
+import { createContext,useState } from 'react';
+import SearchContext from './SearchContext';
+const data=createContext();
 const NavBar = () => {
+    let [search,setSearch]=useState("")
     return (
         <div>
             <Navbar expand="lg" className="bg-body-tertiary">
                 <Container fluid>
-                    <Navbar.Brand href="#">Ecommerce</Navbar.Brand>
+                    <Navbar.Brand href="#">MyShop</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -20,18 +24,8 @@ const NavBar = () => {
                             navbarScroll
                         >
                             <Nav.Link href="#action1">Home</Nav.Link>
-                            <Nav.Link href="#action2"><Link to="/about">About</Link></Nav.Link>
+                            <Nav.Link href="#action2" as={Link} to="/about">About</Nav.Link>
                             <Nav.Link href="#action2">Gallery</Nav.Link>
-                            <NavDropdown title="Link" id="navbarScrollingDropdown">
-                                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action4">
-                                    Another action
-                                </NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action5">
-                                    Something else here
-                                </NavDropdown.Item>
-                            </NavDropdown>
                             <Nav.Link href="#" disabled>
                                 Link
                             </Nav.Link>
@@ -43,7 +37,7 @@ const NavBar = () => {
                                 className="me-2"
                                 aria-label="Search"
                             />
-                            <Button variant="outline-success">Search</Button>
+                            <Button variant="outline-success" >Search</Button>
                             <Button as={Link} to="/login" variant="primary">Login</Button>
                             <Button as={Link} to="/register" variant="secondary">Register</Button>
                         </Form>
@@ -51,9 +45,14 @@ const NavBar = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+            {
+                <data.Provider value={search}> <SearchContext/></data.Provider>
+            }
             {/* <Banner /> */}
+
         </div>
     )
 }
 
-export default NavBar
+
+export {data,NavBar}

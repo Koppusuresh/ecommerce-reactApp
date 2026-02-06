@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes} from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
-import NavBar from "./Navbar"
+import {NavBar} from "./Navbar"
 import Banner from "./Banner"
 import About from "./components/About"
 import LoginPage from "./components/LoginPage"
